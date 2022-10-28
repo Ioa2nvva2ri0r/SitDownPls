@@ -1,0 +1,320 @@
+@import "_varibles";
+@import "_mixin-main";
+// for-all
+@import "./classes-for-all/_common";
+@import "./classes-for-all/_common-class";
+@import "./classes-for-all/_header";
+@import "./classes-for-all/_header-breadcrumbs";
+@import "./classes-for-all/_footer";
+@import "./classes-for-all/_modal";
+// index
+@import "./index-classes/_banner";
+@import "./index-classes/_special";
+@import "./index-classes/_rating";
+@import "./index-classes/_collection";
+@import "./index-classes/_categories";
+@import "./index-classes/_useful";
+@import "./index-classes/_dispatch";
+// catalog
+@import "./other-page-classes/_range-slider";
+@import "./other-page-classes/_catalog";
+// card-product
+@import "./other-page-classes/_card";
+// contacts";
+@import "./other-page-classes/_contacts";
+// cooperation
+@import "./other-page-classes/_cooperation";
+
+// map
+.ymaps-2-1-79-balloon {
+  @include visible();
+  box-shadow: none !important;
+  &__layout {
+    width: 343px;
+    height: 284px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 0px 0px rgb(0 0 0 / 7%);
+  }
+  &__content {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 14px !important;
+    color: $col-bl;
+  }
+  &__close-button {
+    width: 40px !important;
+    background-size: 33% !important;
+    background-position: 28% 70% !important;
+  }
+  &__tail {
+    left: 160px !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+  @media (max-width: 664px) {
+    &__layout {
+      width: 232px;
+      height: 260px;
+    }
+    &__close-button {
+      background-size: 30% !important;
+      background-position: 55% 48% !important;
+    }
+    &__tail {
+      left: 107px !important;
+    }
+  }
+}
+
+// just-validate
+.just-validate-tooltip {
+  &-container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  &-hide {
+    animation: fadeOut 0.4s ease-in-out;
+    opacity: 0;
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.js-validate-error-label {
+  position: absolute;
+  pointer-events: none;
+  top: -17px;
+  left: 18px;
+  z-index: 10;
+  width: 70%;
+  min-height: max-content;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #ff6972 !important;
+  transition: all 0.4s linear;
+}
+
+// scroll
+[data-simplebar] {
+  position: absolute;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  &.simplebar-dragging .simplebar-content {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  &.simplebar-dragging .simplebar-track {
+    pointer-events: all;
+  }
+}
+.simplebar {
+  &-wrapper {
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    max-height: inherit;
+  }
+  &-mask {
+    direction: inherit;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: auto !important;
+    height: auto !important;
+    z-index: 0;
+  }
+  &-offset {
+    direction: inherit !important;
+    box-sizing: inherit !important;
+    resize: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  &-content {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &-wrapper {
+      direction: inherit;
+      box-sizing: border-box !important;
+      position: relative;
+      overflow: auto;
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  }
+  &-content-wrapper::-webkit-scrollbar,
+  &-hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  &-placeholder {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
+  &-height-auto-observer {
+    box-sizing: inherit;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1000%;
+    width: 1000%;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+    &-wrapper {
+      box-sizing: inherit !important;
+      height: 100%;
+      width: 100%;
+      max-width: 1px;
+      position: relative;
+      float: left;
+      max-height: 1px;
+      overflow: hidden;
+      z-index: -1;
+      padding: 0;
+      margin: 0;
+      pointer-events: none;
+      flex-grow: inherit;
+      flex-shrink: 0;
+      flex-basis: 0;
+    }
+  }
+  &-scrollbar {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    right: 0;
+    min-height: 10px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      opacity: 1;
+      background-color: $bac-pur_d;
+      transition: background-color 0.4s ease-in-out;
+    }
+    &:hover::before,
+    &:focus::before {
+      background-color: $bac-pur_li;
+      transition: background-color 0.4s ease-in-out;
+    }
+    &:active::before {
+      background-color: $bac-pur_sh;
+      transition: background-color 0.4s ease-in-out;
+    }
+    &.simplebar-visible:before {
+      transition: background-color 0.4s ease-in-out;
+    }
+  }
+  &-track {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: initial;
+    bottom: 0;
+    right: 12px;
+    z-index: 1;
+    &.simplebar-vertical {
+      width: 6px;
+      top: 55px;
+      bottom: 55px;
+      border-radius: 4px;
+      background: $bac-gr;
+    }
+    &.simplebar-vertical .simplebar-scrollbar::before {
+      top: 0px;
+      bottom: 0px;
+      opacity: 1;
+    }
+    &.simplebar-horizontal {
+      left: 0;
+      height: 11px;
+    }
+    &.simplebar-horizontal .simplebar-scrollbar:before {
+      height: 100%;
+      left: 2px;
+      right: 2px;
+    }
+    &.simplebar-horizontal .simplebar-scrollbar {
+      right: auto;
+      left: 0;
+      top: 2px;
+      height: 7px;
+      min-height: 0;
+      min-width: 10px;
+      width: auto;
+    }
+    @media (max-width: 1320px) {
+      right: 10px;
+    }
+    @media (max-width: 767px) {
+      right: 5px;
+    }
+  }
+  &-hide-scrollbar {
+    position: fixed;
+    left: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+.hs-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}

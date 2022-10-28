@@ -1,0 +1,438 @@
+.main-card {
+  padding-top: 30px;
+  padding-bottom: 70px;
+  @media (max-width: 1320px) {
+    padding-top: 30px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    &__container {
+      @include container--sm();
+    }
+  }
+}
+
+.section-card {
+  display: grid;
+  grid-template-columns: 624px 622px;
+  grid-template-rows: 100%;
+  gap: 32px;
+  padding-bottom: 80px;
+  &__slider {
+    overflow: hidden;
+    height: 81px;
+    padding: 10px 25px;
+    background-color: $bac-gr;
+  }
+  &__slide {
+    width: max-content;
+  }
+  &__img {
+    max-height: 61px;
+    &-container {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    &-box-main {
+      display: none;
+      &:nth-child(1) {
+        display: block;
+      }
+    }
+    &-btn-main {
+      @include img-btn-modal();
+    }
+    &-main {
+      @include picture();
+      min-height: 110px;
+      max-height: 245px;
+      margin-bottom: 16px;
+    }
+    &-1 {
+      max-width: 123px;
+    }
+    &-2 {
+      max-width: 66px;
+    }
+    &-3 {
+      max-width: 134px;
+    }
+    &-4 {
+      max-width: 137px;
+    }
+    &-btn {
+      @include img-btn-modal();
+    }
+    &-box-content {
+      @include flex-center();
+      position: relative;
+    }
+    &-content {
+      @include img();
+      width: 247px;
+      height: 113px;
+      &:nth-child(1) {
+        margin-right: 32px;
+      }
+    }
+  }
+  &__desc {
+    @include throw();
+    line-height: 25px;
+    &-title {
+      @include throw();
+      margin-bottom: 8px;
+      margin-inline-start: -1px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+    }
+    &-1 {
+      margin-bottom: 8px;
+    }
+    &-2 {
+      margin-bottom: 105px;
+    }
+  }
+  &__box-content-rating {
+    padding-top: 14px;
+    padding-bottom: 108px;
+  }
+  &__content-rating {
+    @include rating();
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 2px;
+    padding-left: 22px;
+    &::before {
+      left: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+  &__subtitle {
+    @include throw();
+    margin-bottom: 21px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: $col-gr;
+  }
+  &__content-price {
+    margin-bottom: 21px;
+    font-size: 36px;
+    line-height: 47px;
+  }
+  &__btn {
+    @include throw-btn();
+    @include link-us();
+    border-bottom: 1px solid transparent;
+    font-size: 16px;
+    line-height: 21px;
+    color: $bac-pur_d;
+    transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    &::after {
+      left: -2px;
+      padding: 0 2px 1px 3px;
+      transition: background-color 0.4s ease-in-out;
+    }
+    &:hover {
+      border-color: $bac-pur_d;
+    }
+    &:focus {
+      color: $col-wi;
+    }
+    &:focus::after {
+      background-color: $bac-pur_li;
+    }
+    &:active {
+      border-color: $bac-pur_sh;
+      color: $bac-pur_sh;
+    }
+    &:active::after {
+      background-color: transparent;
+    }
+    &-box {
+      @include flex-center();
+      flex-direction: column;
+      width: max-content;
+    }
+    &-main {
+      @include btn-us-2();
+      margin-bottom: 14px;
+      padding: 17px 33.5px;
+      background-color: $bac-pur_d;
+      color: $col-wi;
+    }
+  }
+  &__list {
+    @include throw-li();
+    max-width: 544px;
+    min-height: 375px;
+  }
+  &__item {
+    @include flex-between();
+    @include slider-container();
+    position: relative;
+    min-height: 25px;
+    line-height: 25px;
+    &::after {
+      position: absolute;
+      content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 1;
+      color: $col-gr;
+    }
+    &-subject {
+      @include throw();
+      z-index: 5;
+      font-weight: 400;
+      font-size: 14px;
+      background-color: $col-wi;
+      color: $col-gr;
+    }
+    &-desc {
+      z-index: 5;
+      background-color: $col-wi;
+      width: 216px;
+    }
+  }
+  @media (max-width: 1320px) {
+    grid-template-columns: 54.1% 42.5%;
+    padding-bottom: 69px;
+    &__container-img {
+      margin-bottom: 32px;
+    }
+    &__img {
+      &-main {
+        max-height: 202px;
+      }
+      &-content {
+        height: 109px;
+        &:nth-child(1) {
+          margin-right: 29px;
+        }
+      }
+    }
+    &__slider {
+      padding: 10px;
+    }
+    &__desc {
+      &-title {
+        margin-bottom: 8px;
+      }
+      &-2 {
+        margin-bottom: 83px;
+      }
+    }
+    &__box-content-rating {
+      padding-top: 14px;
+      padding-bottom: 66px;
+    }
+    &__btn-main {
+      margin-bottom: 13px;
+    }
+    &__list {
+      width: 100%;
+      max-width: initial;
+    }
+  }
+  @media (max-width: 1023px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr;
+    padding-bottom: 32px;
+    &__img {
+      &-main {
+        max-height: 245px;
+        margin-bottom: 31px;
+      }
+      &-content {
+        width: 243px;
+        &:nth-child(1) {
+          margin-right: 30px;
+        }
+      }
+    }
+    &__slider {
+      width: 100%;
+      max-width: 187px;
+      height: 349px;
+      margin-left: 0;
+      padding-top: 25px;
+      padding-bottom: 22px;
+    }
+    &__container-slide {
+      align-items: center;
+    }
+    &__slide {
+      height: max-content;
+      &:nth-child(1) {
+        margin-bottom: 15px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 19px;
+      }
+      &:nth-child(3) {
+        margin-bottom: 10px;
+      }
+      &:nth-child(4) {
+        margin-bottom: 23px;
+      }
+    }
+    &__desc {
+      &-title {
+        margin-bottom: 9px;
+      }
+      &-1 {
+        width: 80%;
+      }
+      &-2 {
+        width: 85%;
+        margin-bottom: 32px;
+      }
+    }
+    &__box-content-rating {
+      position: absolute;
+      top: 313px;
+      right: 111px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 68px;
+    &__slider {
+      max-width: inherit;
+      width: 100%;
+      height: 81px;
+      padding: 10px;
+      margin-bottom: 276px;
+    }
+    &__slide {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+    &__img {
+      &-main {
+        max-height: 116px;
+        margin-bottom: 18px;
+      }
+      &-content {
+        width: 140px;
+        height: 64px;
+        &:nth-child(1) {
+          margin-right: 16px;
+        }
+      }
+    }
+    &__desc {
+      width: 99%;
+      &-2 {
+        margin-bottom: 32px;
+      }
+    }
+    &__box-content-rating {
+      top: 229px;
+      right: 0;
+      left: 0;
+      max-width: 430px;
+      padding: 0 12px;
+    }
+    &__title {
+      margin-bottom: 7px;
+      font-size: 16px;
+      line-height: 21px;
+    }
+    &__subtitle {
+      width: 80%;
+      margin-bottom: 16px;
+    }
+    &__content-price {
+      margin-bottom: 16px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+    &__btn {
+      &-box {
+        width: 100%;
+        padding-bottom: 0;
+      }
+      &-main {
+        width: 100%;
+      }
+    }
+    &__list {
+      @include flex-wrap();
+    }
+    &__item {
+      @include flex-column();
+      width: max-content;
+      margin-right: 20px;
+      &::after {
+        display: none;
+      }
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      &-subject {
+        font-size: 10px;
+        line-height: 14px;
+      }
+      &-desc {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+.section-similar {
+  position: relative;
+  &__box-title-btn {
+    @include flex-between();
+    padding-bottom: 21px;
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 0;
+  }
+  &__slider {
+    @include slider-container();
+    min-height: 420px;
+  }
+  &__slide {
+    min-height: 420px;
+  }
+  @media (max-width: 1320px) {
+    &__box-title-btn {
+      padding-bottom: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    min-height: 383px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &__slider {
+      min-height: 278px;
+      &-btn-box {
+        bottom: 1px;
+      }
+    }
+    &__slide {
+      min-height: 278px;
+    }
+    &__content-rating {
+      top: 16px;
+    }
+  }
+}

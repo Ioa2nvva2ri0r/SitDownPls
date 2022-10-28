@@ -1,0 +1,144 @@
+.section-cooperation {
+  padding-top: 30px;
+  padding-bottom: 69px;
+  &__container {
+    padding-right: 455px;
+  }
+  &__title {
+    margin-bottom: 32px;
+  }
+  h2 {
+    @include throw();
+    @include title-us-2();
+  }
+  h3 {
+    @include throw();
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: $col-or;
+  }
+  p {
+    @include desc();
+    &:nth-child(3) {
+      margin-bottom: 32px;
+    }
+  }
+  ul {
+    @include throw-li();
+    padding-bottom: 32px;
+    span {
+      width: 25px;
+      height: 25px;
+      margin-right: 12px;
+    }
+    p:nth-child(2) {
+      width: 70%;
+      line-height: 24px;
+    }
+  }
+  ol {
+    @include throw-li();
+    padding-bottom: 32px;
+    span {
+      margin-right: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 29px;
+      color: $col-or;
+    }
+    p {
+      width: 96%;
+    }
+  }
+  li {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+  &__guarantees-box {
+    @include flex-center();
+    img {
+      width: 77px;
+      height: 116px;
+      margin-right: 32px;
+    }
+    p {
+      @include throw();
+      width: 61%;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+  @media (max-width: 1320px) {
+    &__container {
+      padding-right: 143px;
+    }
+  }
+  @media (max-width: 992px) {
+    &__container {
+      padding-right: 72px;
+    }
+    ul {
+      p:nth-child(2) {
+        width: 93%;
+      }
+    }
+    &__guarantees-box {
+      p {
+        width: 84%;
+      }
+    }
+  }
+  @media (max-width: 664px) {
+    padding-top: 32px;
+    padding-bottom: 70px;
+    &__container {
+      padding-right: 12px;
+    }
+    &__title {
+      @include title-us--sm();
+    }
+    h2 {
+      font-size: 16px;
+      line-height: 22px;
+      &:nth-child(6) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    ul {
+      p:nth-child(3) {
+        font-size: 14px;
+        line-height: 25px;
+      }
+      p:nth-child(2) {
+        width: 100%;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+    ol {
+      p {
+        width: 91%;
+      }
+    }
+    &__guarantees-box {
+      img {
+        width: 36px;
+        height: 54px;
+        margin-right: 16px;
+      }
+      p {
+        width: 63%;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@mixin container {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin container--xl {
+  max-width: 1320px;
+  padding: 0 36px;
+}
+
+@mixin container--lg {
+  max-width: 992px;
+  padding: 0 72px;
+}
+
+@mixin container--sm {
+  max-width: 664px;
+  padding: 0 12px;
+}
+
+@mixin slider-container {
+  overflow: hidden;
+  width: 100%;
+}

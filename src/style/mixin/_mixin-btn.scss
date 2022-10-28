@@ -1,0 +1,214 @@
+@mixin btn-dropdown {
+  @include flex-center-between();
+  z-index: 10;
+  border: 2px solid #f7f7f7;
+  border-radius: 0 10px 10px 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: $col-wi;
+  font-size: 16px;
+  line-height: 22px;
+  color: $bac-pur_d;
+  transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  & svg {
+    margin-top: 3px;
+  }
+  &:hover {
+    border-color: $bac-pur_d;
+    transition: border-color 0.4s ease-in-out;
+  }
+  &:focus {
+    border-color: $bac-pur_d;
+    background-color: $bac-pur;
+    transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+  &:active {
+    border-color: $bac-pur_sh;
+    background-color: transparent;
+    transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+}
+
+@mixin glitter-btn {
+  &:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 200px;
+    margin-left: 50px;
+    background: $col-wi;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    left: -40px;
+    top: -100px;
+    z-index: 1;
+    transform: rotate(45deg);
+    position: absolute;
+    animation: movingFlare 3s ease-in-out 0.05s infinite;
+    @keyframes movingFlare {
+      0% {
+        left: -30px;
+        margin-left: 0px;
+      }
+      30% {
+        left: 110%;
+        margin-left: 80px;
+      }
+      100% {
+        left: 110%;
+        margin-left: 80px;
+      }
+    }
+  }
+}
+
+@mixin btn-us {
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+  border: 2px solid $bac-pur_d;
+  border-radius: 10px;
+  padding: 16px 33px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: $bac-pur_d;
+  box-shadow: 3px 3px 3px #a65cf099;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  @include glitter-btn();
+  &::after {
+    display: none;
+  }
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    display: block;
+  }
+  &:hover {
+    background-color: $bac-pur_d;
+    color: $col-wi;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+  &:focus {
+    background-color: $bac-pur_li;
+    color: $col-wi;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+  &:active {
+    border-color: $bac-pur_sh;
+    background-color: $bac-pur_sh;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  }
+}
+
+@mixin btn-us-2 {
+  @include glitter-btn();
+  &:hover {
+    border-color: $bac-pur_li;
+    background-color: $bac-pur_li;
+  }
+  &:focus {
+    border-color: $bac-pur_sh;
+  }
+  &:active {
+    border-color: $bac-pur_sh;
+    background-color: $bac-pur_sh;
+  }
+}
+
+@mixin btn-slide {
+  position: relative;
+  top: initial;
+  left: initial;
+  right: initial;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  &::after {
+    display: none;
+  }
+  & svg {
+    border-radius: 100%;
+    transition: background-color 0.4s ease-in-out;
+  }
+  & svg > path {
+    transition: stroke 0.4s ease-in-out;
+  }
+  & svg > circle {
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:hover svg {
+    background-color: $bac-pur_d;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    stroke: $col-wi;
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus svg {
+    background-color: $bac-pur_li;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:focus svg path {
+    stroke: $col-wi;
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:active svg {
+    background-color: $bac-pur_sh;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:active svg path {
+    stroke: $col-wi;
+    transition: stroke 0.4s ease-in-out;
+  }
+  &:active svg circle {
+    stroke: $bac-pur_sh;
+    transition: stroke 0.4s ease-in-out;
+  }
+}
+
+@mixin btn-slide-dis {
+  cursor: default;
+  opacity: 1;
+  & svg > path {
+    stroke: $col-gr;
+  }
+  & svg > circle {
+    stroke: $col-gr;
+  }
+  &:focus svg {
+    background-color: transparent;
+  }
+  &:focus svg path {
+    stroke: $col-gr;
+  }
+  &:active svg {
+    background-color: transparent;
+  }
+}
+
+@mixin img-btn-modal {
+  @include throw-btn();
+  border-radius: 10px;
+  transition: background-color 0.4s ease-in-out;
+  &:hover {
+    background-color: #ffbd5931;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:focus {
+    background: #ffbd5931;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:active {
+    background-color: #ffbd5952;
+    transition: background-color 0.4s ease-in-out;
+  }
+}

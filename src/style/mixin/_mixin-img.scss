@@ -1,0 +1,12 @@
+@mixin img {
+  @include block-100();
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin picture {
+  @include block-100();
+  object-fit: cover;
+  vertical-align: bottom;
+}

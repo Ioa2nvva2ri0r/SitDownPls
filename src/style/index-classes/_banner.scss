@@ -1,0 +1,135 @@
+.section-banner {
+  position: relative;
+  &__popup {
+    @include position-abs();
+    @include img();
+    display: none;
+    z-index: 5;
+    background-image: url("../img/slide-banner/popup.webp");
+  }
+  &__slide {
+    min-height: 400px;
+    &:nth-child(1) &-btn {
+      padding: 19.5px 48px;
+    }
+    &-img {
+      @include position-abs();
+      @include picture();
+    }
+    &-container {
+      z-index: 10;
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+    &-title {
+      @include throw();
+      width: 100%;
+      max-width: 495px;
+      margin-bottom: 48px;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 66px;
+      color: $col-gr;
+    }
+    &:last-child &-title {
+      max-width: 575px;
+      color: $col-wi;
+    }
+    &-btn {
+      @include btn-us-2();
+      width: 100%;
+      max-width: 186px;
+      padding: 20px 45px;
+      background-color: $bac-pur_d;
+      letter-spacing: 0.2px;
+      color: $col-wi;
+      &:disabled {
+        cursor: initial;
+        border-color: $bac-gr_d;
+        background-color: $bac-gr_d;
+        color: $col-gr;
+        box-shadow: 0 3px 3px #ececec99;
+        &::after {
+          display: none;
+        }
+      }
+      &-sm {
+        display: none;
+      }
+    }
+  }
+  &__pagination {
+    bottom: 0 !important;
+    height: 40px;
+  }
+  @media (max-width: 1320px) {
+    &__slide {
+      &-btn {
+        padding: 19.5px 48px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    &__slide {
+      &-container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      &-title {
+        font-size: 41px;
+        line-height: 60px;
+      }
+      &:last-child &-title {
+        font-size: 39px;
+        line-height: 60px;
+      }
+    }
+  }
+  @media (max-width: 664px) {
+    min-height: 302px;
+    &__popup {
+      height: 70%;
+    }
+    &__slider {
+      margin-bottom: 32px;
+    }
+    &__slide {
+      min-height: 210px;
+      &-container {
+        max-width: 475px;
+        padding: 30px;
+      }
+      &-title {
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 27px;
+      }
+      &:nth-child(3) &-title {
+        font-size: 20px;
+        line-height: 27px;
+      }
+      &-btn {
+        display: none;
+        &-sm {
+          display: block;
+          max-width: 296px;
+          margin: 0 auto;
+          padding: 20px 49px;
+          background-color: $bac-pur_d;
+          letter-spacing: 0.2px;
+          color: $col-wi;
+          &:disabled {
+            cursor: initial;
+            border-color: $bac-gr_d;
+            background-color: $bac-gr_d;
+            color: $col-gr;
+          }
+        }
+      }
+    }
+    &__pagination {
+      bottom: 99px !important;
+      height: 15px;
+    }
+  }
+}

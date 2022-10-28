@@ -1,0 +1,496 @@
+.popup-response {
+  @include modal();
+  &__container {
+    @include modal-container();
+    max-width: 624px;
+    width: 100%;
+    max-height: 421px;
+    padding: 30px;
+  }
+  &__btn {
+    @include throw-btn();
+    @include icon-us();
+    position: absolute;
+    visibility: visible;
+    z-index: 160;
+    top: 21px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    &::after {
+      top: -2px;
+      left: -2px;
+      padding: 2px;
+    }
+    &:focus svg path {
+      fill: $bac-pur_sh;
+    }
+    &:focus::after {
+      background-color: $bac-pink;
+    }
+    &:active::after {
+      background-color: transparent;
+    }
+  }
+  &__img {
+    width: 172px;
+    height: 117px;
+    margin-top: 118px;
+    margin-bottom: 33px;
+    margin-left: 202px;
+    & svg {
+      @include block-100();
+    }
+  }
+  &__desc {
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  @media (max-width: 767px) {
+    &__container {
+      width: 296px;
+      height: 216px;
+      padding: 30px 16px;
+      padding-right: 10px;
+    }
+    &__img {
+      width: 73px;
+      height: 50px;
+      margin-top: 60px;
+      margin-bottom: 14px;
+      margin-left: 101px;
+    }
+    &__desc {
+      max-width: 194px;
+      min-height: 32px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+    &__btn {
+      top: 15px;
+      right: 16px;
+      width: 12px;
+      height: 12px;
+      &::after {
+        top: -1px;
+      }
+      & svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.modal-card {
+  @include modal();
+  &__container {
+    @include modal-container();
+    @include flex-between();
+    flex-direction: column;
+    width: 1280px;
+    height: 684px;
+  }
+  &__content {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 48px;
+    &-box {
+      @include flex-column();
+      align-items: center;
+      justify-content: flex-end;
+      height: 684px;
+    }
+  }
+  &__img {
+    max-height: 418px;
+    &-box {
+      display: none;
+      &:nth-child(1) {
+        display: block;
+      }
+    }
+  }
+  &__slider {
+    @include slider-container();
+    height: 100%;
+    min-width: 0;
+    &-btn {
+      &-1,
+      &-2 {
+        display: none;
+      }
+    }
+  }
+  &__slide {
+    width: auto;
+  }
+  &__tabs {
+    &-btn {
+      @include throw-btn();
+      height: 100%;
+    }
+    &-slider {
+      position: relative;
+      margin-top: auto;
+      height: 166px;
+      width: 100%;
+      border-radius: 0px 0px 10px 10px;
+      padding: 20px 51px;
+      background-color: $bac-gr;
+    }
+    &-img {
+      @include picture();
+      max-height: 126px;
+      object-fit: fill;
+    }
+  }
+  &__btn-close {
+    @include throw-btn();
+    @include icon-us();
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    &::after {
+      top: -2px;
+      left: -2px;
+      padding: 2px;
+    }
+    &:focus svg path {
+      fill: $bac-pur_sh;
+    }
+    &:focus::after {
+      background-color: $bac-pink;
+    }
+    &:active::after {
+      background-color: transparent;
+    }
+  }
+  @media (max-width: 1320px) {
+    &__container {
+      width: 952px;
+      height: 588px;
+    }
+    &__content {
+      padding-top: 50px;
+      padding-bottom: 48px;
+      &-box {
+        height: 588px;
+      }
+    }
+    &__img {
+      max-height: 322px;
+    }
+    &__tabs-slider {
+      padding: 20px 67px;
+    }
+    &__slider-btn {
+      &-1 {
+        @include btn-slide();
+        display: block;
+        position: absolute;
+        top: initial;
+        bottom: 67px;
+        left: 16px;
+      }
+      &-2 {
+        @include btn-slide();
+        display: block;
+        position: absolute;
+        top: initial;
+        bottom: 67px;
+        right: 16px;
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    &__container {
+      width: 624px;
+      height: 494px;
+    }
+    &__content {
+      padding-top: 50px;
+      padding-bottom: 48px;
+      &-box {
+        height: 494px;
+      }
+    }
+    &__img {
+      max-height: 228px;
+    }
+    &__tabs-slider {
+      padding: 20px 79px;
+    }
+  }
+  @media (max-width: 767px) {
+    &__container {
+      width: 296px;
+      height: 286px;
+    }
+    &__btn-close {
+      top: 15px;
+      right: 16px;
+      width: 12px;
+      height: 12px;
+      &::after {
+        top: -1px;
+      }
+      & svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+    &__content {
+      padding-top: 32px;
+      padding-bottom: 28px;
+      &-box {
+        height: 286px;
+      }
+    }
+    &__img {
+      max-height: 104px;
+    }
+    &__tabs-slider {
+      height: 118px;
+      border-radius: 0px 0px 10px 10px;
+      padding: 16px 62px;
+    }
+    &__slider-btn {
+      &-1 {
+        bottom: 43px;
+        left: 16px;
+      }
+      &-2 {
+        bottom: 43px;
+        right: 16px;
+      }
+    }
+    &__slide {
+      @include flex-center-center();
+    }
+    &__img-tabs {
+      max-height: 86px;
+    }
+  }
+}
+
+.modal-form {
+  @include modal();
+  &__container {
+    @include modal-container();
+    width: 100%;
+    min-width: 296px;
+    max-width: 624px;
+    height: 421px;
+    padding: 30px;
+  }
+  &__title {
+    margin-bottom: 10px;
+    line-height: 33px;
+  }
+  &__desc {
+    @include throw();
+    width: 65%;
+    margin-bottom: 30px;
+    line-height: 18px;
+  }
+  &__form {
+    @include flex-column();
+    &-input {
+      @include input();
+      width: 100%;
+      height: 54px;
+      &-box {
+        @include flex-column();
+        justify-content: space-between;
+        min-height: 168px;
+        padding-bottom: 30px;
+      }
+    }
+    &-checkbox {
+      @include checkbox();
+      &-box {
+        @include flex-center();
+      }
+      & + &-icon {
+        width: 14px;
+        height: 14px;
+        top: 3px;
+        left: -21px;
+      }
+      &-label {
+        @include label();
+        margin-right: 4px;
+        margin-left: 21px;
+      }
+    }
+    &-link {
+      @include link-us();
+      text-decoration: underline;
+      color: $bac-pur_d;
+      &::after {
+        left: -5px;
+        padding: 0 5px;
+      }
+      &:hover {
+        color: $bac-pink;
+        transition: color 0.3s ease-in-out;
+      }
+      &:active {
+        color: $bac-pur_sh;
+      }
+    }
+    &-btn {
+      @include btn-us-2();
+      margin-bottom: 12px;
+      padding: 17px 33px;
+      background-color: $bac-pur_d;
+      color: $col-wi;
+    }
+  }
+  &__btn-close {
+    @include throw-btn();
+    @include icon-us();
+    position: absolute;
+    visibility: visible;
+    z-index: 160;
+    top: 21px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    &::after {
+      top: -2px;
+      left: -2px;
+      padding: 2px;
+    }
+    &:focus svg path {
+      fill: $bac-pur_sh;
+    }
+    &:focus::after {
+      background-color: $bac-pink;
+    }
+    &:active::after {
+      background-color: transparent;
+    }
+  }
+  @media (max-width: 767px) {
+    &__container {
+      max-width: 296px;
+      height: 387px;
+      padding: 30px 16px;
+      padding-right: 10px;
+    }
+    &__title {
+      margin-bottom: 9px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+    &__desc {
+      width: 100%;
+      margin-bottom: 15px;
+      line-height: 19px;
+    }
+    &__form {
+      &-input {
+        width: 98%;
+        &-box {
+          min-height: 140px;
+          padding-bottom: 16px;
+        }
+      }
+      &-checkbox {
+        & + &-icon {
+          top: -1px;
+          left: -19px;
+        }
+        &-label {
+          font-size: 12px;
+          margin-left: 19px;
+        }
+      }
+      &-link {
+        font-size: 12px;
+      }
+      &-btn {
+        margin-bottom: 13px;
+      }
+    }
+    &__btn-close {
+      top: 15px;
+      right: 16px;
+      width: 12px;
+      height: 12px;
+      &::after {
+        top: -1px;
+      }
+      & svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+.popup-contacts {
+  @include block-100();
+  position: absolute;
+  z-index: 10;
+  padding: 30px;
+  background-color: $col-wi;
+  &__title {
+    @include throw();
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  &__address {
+    margin-bottom: 10px;
+    font-style: normal;
+  }
+  &__tel {
+    width: max-content;
+    margin-bottom: 17px;
+  }
+  &__desc-time {
+    margin-bottom: 10px;
+    border-top: 1px solid $bac-gr;
+    border-bottom: 1px solid $bac-gr;
+    padding: 12px 0;
+  }
+  &__desc {
+    line-height: 25px;
+  }
+  &__desc-alert {
+    color: $col-gr;
+  }
+  @media (max-width: 664px) {
+    padding: 20px;
+    padding-top: 24px;
+    &__title {
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+    &__address {
+      margin-bottom: 11px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__desc-time {
+      margin-bottom: 18px;
+      font-size: 12px;
+      line-height: 9px;
+    }
+    &__desc {
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+}

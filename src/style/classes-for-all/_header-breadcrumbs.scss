@@ -1,0 +1,58 @@
+.header-breadcrumbs {
+  display: none;
+  padding-top: 21px;
+  &-active {
+    display: block;
+  }
+  &__list {
+    @include throw-li();
+    display: flex;
+  }
+  &__item {
+    color: $col-gr;
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 15px;
+      &::after {
+        position: absolute;
+        content: "/";
+        right: -10px;
+        top: 0;
+      }
+    }
+    &:nth-last-child(2) {
+      margin-right: 13px;
+      &::after {
+        right: -8px;
+      }
+    }
+    &-link {
+      @include link-us();
+      &::after {
+        left: -1px;
+        padding: 0 1px;
+      }
+      &-and {
+        cursor: default;
+        text-decoration: none;
+        color: $bac-pur_d;
+      }
+    }
+  }
+  @media (max-width: 664px) {
+    display: none;
+    &-active {
+      display: none;
+    }
+  }
+}
+
+// card (desktop)
+
+.header-card .header-breadcrumbs__box-4 {
+  padding-top: 18px;
+  @media (max-width: 1320px) {
+    padding-top: 21px;
+  }
+}
+

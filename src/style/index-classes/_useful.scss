@@ -1,0 +1,140 @@
+.section-useful {
+  padding-bottom: 69px;
+  &__title {
+    margin-bottom: 0;
+    &-container {
+      @include flex-between();
+      padding-bottom: 26px;
+    }
+  }
+  &__slider {
+    @include slider-container();
+    min-height: 676px;
+    &-btn {
+      &-box {
+        display: flex;
+      }
+    }
+  }
+  &__slide {
+    min-height: 676px;
+    &:nth-child(1) {
+      .section-useful__card-title {
+        margin-bottom: 37px;
+      }
+    }
+    &:nth-child(4) {
+      .section-useful__card-title {
+        margin-bottom: 37px;
+      }
+    }
+  }
+  &__card {
+    @include contain-card();
+    justify-content: flex-start;
+    padding: 0;
+    &-img {
+      width: 100%;
+      min-height: 200px;
+      height: 426px;
+      border-radius: 10px 10px 0 0;
+    }
+    &-box {
+      @include flex-column();
+      justify-content: flex-end;
+      min-height: 247px;
+      padding: 27px 30px 31px;
+    }
+    &-title {
+      @include throw();
+      margin-bottom: 70px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 33px;
+    }
+    &-btn {
+      padding: 16px 34px;
+    }
+  }
+  @media (max-width: 1320px) {
+    padding-bottom: 70px;
+    &__title-container {
+      padding-bottom: 25px;
+    }
+    &__slider {
+      min-height: 456px;
+    }
+    &__slide {
+      @include flex-center-center();
+      min-height: 456px;
+      &:nth-child(1) {
+        .section-useful__card {
+          &-box {
+            padding-right: 38px;
+          }
+        }
+        .section-useful__card-title {
+          margin-bottom: 30px;
+        }
+      }
+      &:nth-child(4) {
+        .section-useful__card-title {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &__card {
+      max-width: 340px;
+      &-img {
+        height: 200px;
+      }
+      &-box {
+        min-height: 250px;
+        padding: 27px 30px 30px 30px;
+      }
+      &-title {
+        margin-bottom: 52px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    padding-bottom: 70px;
+    &__slider {
+      min-height: 456px;
+    }
+    &__card {
+      &-title {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 117px;
+    &__container {
+      padding: 0 20px;
+    }
+    &__title {
+      @include title-us--sm();
+      max-width: 727px;
+    }
+    &__slider-btn-box {
+      bottom: -49px;
+    }
+  }
+  @media (max-width: 644px) {
+    &__container {
+      padding: 0 12px;
+    }
+    &__title {
+      text-align: center;
+    }
+  }
+  @media (max-width: 380px) {
+    &__title {
+      text-align: initial;
+    }
+  }
+}

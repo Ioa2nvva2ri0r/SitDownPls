@@ -1,0 +1,273 @@
+@import "./mixin/_mixin-throw";
+@import "./mixin/_mixin-position";
+@import "./mixin/_mixin-display";
+@import "./mixin/_mixin-img";
+@import "./mixin/_mixin-animation";
+@import "./mixin/_mixin-container";
+@import "./mixin/_mixin-btn";
+@import "./mixin/_mixin-link";
+@import "./mixin/_mixin-text";
+
+@mixin icon-us {
+  position: relative;
+  z-index: 2;
+  &::after {
+    @include position-abs-after();
+    z-index: -1;
+    transition: background-color 0.4s ease-in-out;
+  }
+  & svg > path {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    fill: $bac-pur_li;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:focus::after {
+    background-color: $bac-pur_li;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:focus svg path {
+    fill: $col-wi;
+    transition: fill 0.4s ease-in-out;
+  }
+  &:active::after {
+    background-color: transparent;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:active svg path {
+    fill: $bac-pur_sh;
+    transition: fill 0.4s ease-in-out;
+  }
+}
+
+@mixin input {
+  cursor: pointer;
+  z-index: 1;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 3px 55px 3px 17px;
+  background-color: $bac-gr;
+  font-size: 16px;
+  line-height: 40px;
+  color: $col-bl;
+  transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  &::placeholder {
+    font-size: 16px;
+    line-height: 40px;
+    color: $col-gr;
+  }
+  &:hover {
+    background-color: $bac-gr_d;
+    transition: background-color 0.4s ease-in-out;
+  }
+  &:focus {
+    border-color: $bac-pur_d;
+    background-color: $bac-pur;
+    transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  }
+}
+
+@mixin checkbox {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  margin: 0;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(-50%);
+  & + span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -32px;
+    border: 1px solid $col-gr;
+    border-radius: 2px;
+    transition: border-color 0.4s ease-in-out;
+  }
+  & + span:before {
+    position: absolute;
+    content: "";
+    top: -1px;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.8 4l3.17 3.17L9.652.785' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E");
+    background-color: $bac-pur_d;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 55%;
+    transition: opacity 0.4s ease-in-out;
+  }
+  &:active + span {
+    border-color: $bac-pur_sh;
+  }
+  &:checked + span:before {
+    opacity: 1;
+  }
+  &:checked + span {
+    border-color: $bac-pur_d;
+  }
+}
+
+@mixin label {
+  position: relative;
+  cursor: pointer;
+  margin-left: 32px;
+  transition: border-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  &:hover {
+    color: $bac-pur_d;
+  }
+  &:active {
+    color: $bac-pur_sh;
+  }
+  & > input:hover + span {
+    border-color: $bac-pur_d;
+  }
+  & > input:focus + span {
+    border-color: $bac-pur_d;
+  }
+  & > input:active + span {
+    border-color: $bac-pur_sh;
+  }
+}
+
+@mixin tel {
+  @include flex-center();
+  position: relative;
+  text-decoration: none;
+  z-index: 2;
+  color: $col-or;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -5px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: 0 5px;
+    transition: background-color 0.4s ease-in-out;
+  }
+  & svg {
+    margin-right: 1px;
+  }
+  &:hover {
+    color: $col-ye;
+  }
+  &:focus {
+    color: $col-or;
+  }
+  &:focus::after {
+    background-color: $col-ye_li;
+  }
+  &:active {
+    color: $col-re;
+  }
+  &:active::after {
+    background-color: transparent;
+  }
+  & svg > path {
+    transition: fill 0.4s ease-in-out;
+  }
+  &:hover svg path {
+    fill: $col-ye;
+  }
+  &:active svg path {
+    fill: $col-re;
+  }
+}
+
+@mixin flag {
+  @include flex-center-center();
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 82px;
+  height: 34px;
+  border-radius: 0 4px 4px 0;
+  background-color: $col-or;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $col-wi;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 81px;
+    border: 16px solid transparent;
+    border-left: 10px solid $col-or;
+  }
+}
+
+@mixin price {
+  font-size: 16px;
+  line-height: 21px;
+  color: $col-gr;
+}
+
+@mixin contain-card {
+  @include block-100();
+  @include flex-column();
+  justify-content: flex-end;
+  position: relative;
+  border-radius: 10px;
+  padding-top: 58px;
+  padding-bottom: 30px;
+  background-color: $bac-gr;
+}
+
+@mixin rating {
+  position: absolute;
+  top: 31px;
+  left: 30px;
+  padding-left: 23px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $col-or;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.2764 5.28193L10.5439 4.59758L8.42832 0.330127C8.37054 0.213287 8.27548 0.118702 8.15805 0.0612089C7.86355 -0.0834504 7.50567 0.037099 7.35842 0.330127L5.24285 4.59758L0.510317 5.28193C0.379841 5.30047 0.260549 5.36167 0.169216 5.45441C0.0587999 5.56733 -0.00204457 5.71924 5.24622e-05 5.87678C0.00214949 6.03431 0.0670165 6.18457 0.1804 6.29454L3.60445 9.61614L2.7955 14.3064C2.77653 14.4156 2.78867 14.5278 2.83053 14.6304C2.87239 14.733 2.94231 14.8218 3.03235 14.8869C3.12239 14.952 3.22896 14.9906 3.33996 14.9985C3.45096 15.0064 3.56196 14.9831 3.66037 14.9314L7.89337 12.717L12.1264 14.9314C12.2419 14.9926 12.3761 15.013 12.5048 14.9908C12.8291 14.9352 13.0472 14.6291 12.9912 14.3064L12.1823 9.61614L15.6063 6.29454C15.6995 6.20367 15.7611 6.08497 15.7797 5.95515C15.83 5.63059 15.6026 5.33015 15.2764 5.28193Z' fill='%23FF862F'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+@mixin modal {
+  @include position-fix();
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@mixin modal-container {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+  background-color: $col-wi;
+}
+
+@mixin sidebar-dropdown {
+  display: none;
+  top: 22px;
+  z-index: 5;
+  border: 1px solid $bac-gr_d;
+  border-radius: 0px 0px 10px 10px;
+  padding-top: 40px;
+  padding-left: 29px;
+  background-color: $col-wi;
+}
